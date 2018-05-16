@@ -9,20 +9,20 @@ module.exports = function validateExperienceInput(data) {
   data.fieldofstudy = !isEmpty(data.fieldofstudy) ? data.fieldofstudy : '';
   data.from = !isEmpty(data.from) ? data.from : '';
 
-  if (!Validator.isEmail(data.school)) {
-    errors.school = 'School field is invalid';
+  if (Validator.isEmpty(data.school)) {
+    errors.school = 'School field is required';
   }
 
-  if (!Validator.isEmail(data.degree)) {
-    errors.degree = 'Degree field is invalid';
+  if (Validator.isEmpty(data.degree)) {
+    errors.degree = 'Degree field is required';
   }
 
-  if (!Validator.isEmail(data.from)) {
-    errors.from = 'From date field is invalid';
+  if (Validator.isEmpty(data.from)) {
+    errors.from = 'From date field is required';
   }
 
-  if (!Validator.isEmail(data.fieldofstudy)) {
-    errors.fieldofstudy = 'Field of Study field is invalid';
+  if (Validator.isEmpty(data.fieldofstudy)) {
+    errors.fieldofstudy = 'Field of Study field is required';
   }
 
   return {
