@@ -52,10 +52,10 @@ router.post(
       text: req.body.text,
       name: req.body.name,
       avatar: req.body.avatar,
-      user: req.body.user
+      user: req.user.id
     });
 
-    newPst.save().then(post => res.json(post));
+    newPost.save().then(post => res.json(post));
   }
 );
 
@@ -162,7 +162,7 @@ router.post(
           text: req.body.text,
           name: req.body.name,
           avatar: req.body.avatar,
-          user: req.body.user
+          user: req.user.id
         };
 
         post.comments.unshift(newComment);
