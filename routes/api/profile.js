@@ -210,7 +210,7 @@ router.post(
 // @route   DELETE api/profile/experience/:exp_id
 // @desc    Delete experience to profile
 // @access  Private
-router.post(
+router.delete(
   '/experience/:exp_id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
@@ -231,7 +231,7 @@ router.post(
 // @route   DELETE api/profile/education/:edu_id
 // @desc    Delete education to profile
 // @access  Private
-router.post(
+router.delete(
   '/education/:edu_id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
